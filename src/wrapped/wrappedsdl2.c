@@ -546,7 +546,7 @@ static int get_sdl_priv(x64emu_t* emu, const char *sym_str, void **w, void **f)
         else if (strcmp(#sym, sym_str) == 0) \
         { \
             *w = _w; \
-            *f = dlsym(emu->context->box86lib, "my2_"#sym); \
+            *f = dlsym(emu->context->box64lib, "my2_"#sym); \
             return *f != NULL; \
         }
     #define GOS(sym, _w) GOM(sym, _w)
