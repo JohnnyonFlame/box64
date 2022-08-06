@@ -526,7 +526,7 @@ EXPORT int my2_SDL_snprintf(x64emu_t* emu, void* buff, size_t s, void * fmt, uin
     return vsnprintf(buff, s, fmt, VARARGS);
 }
 
-static int get_sdl_priv(x86emu_t* emu, const char *sym_str, void **w, void **f)
+static int get_sdl_priv(x64emu_t* emu, const char *sym_str, void **w, void **f)
 {
     #define GO(sym, _w) \
         else if (strcmp(#sym, sym_str) == 0) \
@@ -563,7 +563,7 @@ static int get_sdl_priv(x86emu_t* emu, const char *sym_str, void **w, void **f)
     return 0;
 }
 
-int EXPORT my2_SDL_DYNAPI_entry(x86emu_t* emu, uint32_t version, uintptr_t *table, uint32_t tablesize)
+int EXPORT my2_SDL_DYNAPI_entry(x64emu_t* emu, uint32_t version, uintptr_t *table, uint32_t tablesize)
 {
     int i = 0;
     uintptr_t tab[tablesize];
